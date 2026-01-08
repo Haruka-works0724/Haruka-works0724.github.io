@@ -178,7 +178,7 @@ section[id] {
     height: 80px;
     border-radius: 999px;
     border: 1px solid var(--border);
-    background-image: url(img/icon_upa.jpg);
+    background-image: url(img/icon_me.jpg);
     background-repeat: no-repeat;
     background-size: 80px;
 }
