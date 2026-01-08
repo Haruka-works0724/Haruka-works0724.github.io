@@ -56,6 +56,7 @@ function observeAllReveals(root = document) {
 function resetReveals(root) {
     const els = root.querySelectorAll(REVEAL_SELECTOR);
     els.forEach((el) => {
+        revealObserver.unobserve(el);
         el.classList.remove("is-visible");
         // もう一回 observer にかけ直す（再発火させる）
         revealObserver.observe(el);
@@ -82,24 +83,25 @@ document.querySelectorAll(".dotnav__item").forEach((a) => {
 
         e.preventDefault();
 
-        // クリックしたセクションのrevealをいったんリセットして、再発火させる
-        resetReveals(target);
-
-        // 既に画面内なら「その場で」再アニメ（scrollが起きない場合）
         const r = target.getBoundingClientRect();
-        const inView = r.top < window.innerHeight * 0.6 && r.bottom > window.innerHeight * 0.2;
+        const partiallyInView = r.top < window.innerHeight && r.bottom > 0;
 
-        if (inView) {
-            // ちょい待ってから visible を付け直すと“ふわっ”が見える
+        // ★ 既に少しでも見えてるなら「消さない」
+        if (partiallyInView) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+            // その場でふわっと見せたいなら、ここで付け直す（任意）
             requestAnimationFrame(() => {
                 target.querySelectorAll(REVEAL_SELECTOR).forEach((el, i) => {
+                    el.classList.remove("is-visible");
                     setTimeout(() => el.classList.add("is-visible"), i * 55);
                 });
             });
             return;
         }
 
-        // 画面外ならスムーススクロール → observerが入ってきた瞬間に表示
+        // ★ 完全に画面外のときだけリセットしてOK
+        resetReveals(target);
         target.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 });
