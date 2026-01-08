@@ -5,6 +5,7 @@
 
 html,
 body {
+    width: 100%;
     height: 100%;
 }
 
@@ -33,6 +34,9 @@ body {
 
     --radius: 18px;
     --pad: 20px;
+
+    --topbar-h: 96px;
+    /* .topbar の実際の高さに合わせて調整 */
 }
 
 html[data-theme="light"] {
@@ -46,6 +50,9 @@ html[data-theme="light"] {
 
     --dot: rgba(11, 13, 18, .55);
     --dotActive: #0b0d12;
+
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--topbar-h) + 16px);
 }
 
 html[data-theme="mono"] {
@@ -130,6 +137,10 @@ html[data-theme="mono"] {
     padding: 26px 0 10px;
 }
 
+section[id] {
+    scroll-margin-top: calc(var(--topbar-h) + 16px);
+}
+
 .section__title {
     margin: 0 0 14px;
     font-size: 14px;
@@ -167,9 +178,9 @@ html[data-theme="mono"] {
     height: 80px;
     border-radius: 999px;
     border: 1px solid var(--border);
-    background-image: url(img/icon_sakura.jpg);
-    background-repeat:no-repeat;
-    background-size:80px;
+    background-image: url(img/icon_upa.jpg);
+    background-repeat: no-repeat;
+    background-size: 80px;
 }
 
 /* tiles */
@@ -378,4 +389,14 @@ html[data-theme="mono"] {
         filter: none;
         opacity: 1;
     }
+}
+
+/*ノイズ背景*/
+#bgFluid {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
 }
