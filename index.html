@@ -4,12 +4,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Portfolio / FAQ</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
     <!-- ambient background (CSS only) -->
+    <canvas id="bgFluid"></canvas>
     <div class="bg" aria-hidden="true"></div>
 
     <header class="topbar">
@@ -24,11 +25,10 @@
 
     <!-- dot nav -->
     <nav class="dotnav" aria-label="Site navigation">
-        <a class="dotnav__item" href="#home"><span class="dot"></span><span class="label">Home</span></a>
-        <a class="dotnav__item" href="#works"><span class="dot"></span><span class="label">Works</span></a>
+        <a class="dotnav__item is-active" href="#home"><span class="dot"></span><span class="label">Home</span></a>
         <a class="dotnav__item" href="#info"><span class="dot"></span><span class="label">Info</span></a>
         <a class="dotnav__item" href="#contact"><span class="dot"></span><span class="label">Contact</span></a>
-        <a class="dotnav__item is-active" href="#faq"><span class="dot"></span><span class="label">FAQ</span></a>
+        <a class="dotnav__item" href="#faq"><span class="dot"></span><span class="label">FAQ</span></a>
     </nav>
 
     <main class="wrap">
@@ -43,26 +43,10 @@
                     </div>
                     <div class="profile__text">
                         <p><strong>Haruka Arakawa</strong></p>
-                        <p class="muted">HTML/CSS/JavaScript</p>
                         <p class="muted">Nagoya, Japan</p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- projects -->
-        <section id="works" class="section">
-            <h2 class="section__title reveal">Works</h2>
-
-            <div class="grid reveal">
-                <a class="tile" href="#" target="_blank" rel="noreferrer">
-                    <div class="tile__thumb"></div>
-                    <div class="tile__meta">
-                        <div class="tile__title">Co-occurrence Network</div>
-                        <div class="tile__desc muted">共起ネットワーク可視化</div>
-                    </div>
-                </a>
-
         </section>
 
         <!-- info -->
@@ -71,8 +55,10 @@
             <div class="card reveal">
                 <ul class="list">
                     <li><span class="k">Born</span><span class="v">2000 / Japan</span></li>
-                    <li><span class="k">Focus</span><span class="v">UI Implementation / Web</span></li>
-                    <li><span class="k">Stack</span><span class="v">HTML, CSS, JS, React</span></li>
+                    <li><span class="k">Focus</span><span class="v">UI/UX,  Web</span></li>
+                    <li><span class="k">Main</span><span class="v">HTML / CSS / JavaScript</span></li>
+                    <li><span class="k">Learning</span><span class="v">React / Vite / Node.js / D3.js</span></li>
+                    <li><span class="k">Experience</span><span class="v">OutSystems, Sactona</span></li>
                 </ul>
             </div>
         </section>
@@ -90,27 +76,27 @@
 
         <!-- faq -->
         <section id="faq" class="section">
-            <h2 class="section__title reveal">FAQ</h2>
+            <h2 class="section__title reveal">FAQ（編集中）</h2>
 
             <div class="faq">
                 <details class="faq__item reveal" open>
-                    <summary class="faq__q">How did you make the background effect?</summary>
+                    <summary class="faq__q">どのようにこのページを作りましたか？</summary>
                     <div class="faq__a muted">
-                        このたたき台はCSSだけ。あとからCanvas/three.jsを差し替えできる構造にしてあるよ。
+                        （編集中）
                     </div>
                 </details>
 
                 <details class="faq__item reveal">
-                    <summary class="faq__q">Where can I find your code?</summary>
+                    <summary class="faq__q">どんなデザインに関心がありますか？</summary>
                     <div class="faq__a muted">
-                        GitHub / Qiita / 作品リンクを置く。
+                        （編集中）
                     </div>
                 </details>
 
                 <details class="faq__item reveal">
-                    <summary class="faq__q">What libraries do you use?</summary>
+                    <summary class="faq__q">実装がうまくいかないときどうしていますか？</summary>
                     <div class="faq__a muted">
-                        React / Vite / Tailwind など、あなたの実体に合わせて書く。
+                        （編集中）
                     </div>
                 </details>
             </div>
