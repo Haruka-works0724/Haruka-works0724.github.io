@@ -19,27 +19,6 @@ body {
 
 /* ===== themes ===== */
 :root {
-    --wrap: 980px;
-
-    --bg: #0b0d12;
-    --fg: #e8ecff;
-    --muted: rgba(232, 236, 255, .72);
-    --card: rgba(255, 255, 255, .06);
-    --card2: rgba(255, 255, 255, .09);
-    --border: rgba(255, 255, 255, .12);
-    --shadow: 0 18px 60px rgba(0, 0, 0, .35);
-
-    --dot: rgba(232, 236, 255, .70);
-    --dotActive: #ffffff;
-
-    --radius: 18px;
-    --pad: 20px;
-
-    --topbar-h: 96px;
-    /* .topbar の実際の高さに合わせて調整 */
-}
-
-html[data-theme="light"] {
     --bg: #f6f7fb;
     --fg: #0b0d12;
     --muted: rgba(11, 13, 18, .65);
@@ -51,12 +30,11 @@ html[data-theme="light"] {
     --dot: rgba(11, 13, 18, .55);
     --dotActive: #0b0d12;
 
-    scroll-behavior: smooth;
-    scroll-padding-top: calc(var(--topbar-h) + 16px);
-}
+    --radius: 18px;
+    --pad: 20px;
 
-html[data-theme="mono"] {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    --topbar-h: 96px;
+    /* .topbar の実際の高さに合わせて調整 */
 }
 
 /* ===== background ===== */
